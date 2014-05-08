@@ -8,16 +8,11 @@ public abstract class Login {
 	
 	//Constructor :
 	protected Login(){
-		
+		name = "AcmeUser";
+		password = "Daffy_Duck";
+		eMail= "AcmeUser@acme.com";
 	}
 	
 	//Methods :
-	
-	private void sendLoginToServer(){
-		
-	}
-	
-	
-	
 	
 }
