@@ -10,7 +10,7 @@ public class Project {
 	private GregorianCalendar projectStartDate;
 	private GregorianCalendar projectEndDate;
 	private ArrayList<Task> projectTasks;
-	private ArrayList<String> projectEmployees;
+	private ArrayList<Employee> projectEmployees;
 	
 	public Project(){
 		projectName = "Something";
