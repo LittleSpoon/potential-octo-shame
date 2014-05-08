@@ -12,6 +12,12 @@ public abstract class Login {
 		password = "Daffy_Duck";
 		eMail= "AcmeUser@acme.com";
 	}
+
+	@Override
+	public String toString() {
+		return "Login [name=" + name + ", password=" + password + ", eMail="
+				+ eMail + "]";
+	}
 	
 	//Methods :
 	
