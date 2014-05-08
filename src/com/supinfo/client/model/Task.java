@@ -15,11 +15,11 @@ public class Task {
 		
 	public Task(){
 		super();
-		taskName = "TestName";
+		taskName = "something";
 		taskStartDate= new GregorianCalendar(2014,07,05);
 		taskEndDate= new GregorianCalendar(2014,07,14);
 		taskAuthor = "Elepole";
-		taskDescription = "Some task";
+		taskDescription = "some stuff";
 		isTaskFinished = true;		
 	}
 	
@@ -28,7 +28,9 @@ public class Task {
 		SimpleDateFormat date_format = new SimpleDateFormat("dd/mm/yyyy");
 		
 		//test isTaskFinished with a conditional, then return the appropriate string
-		return isTaskFinished ? taskName+" by "+taskAuthor+" which does "+taskDescription+". It it start at "+date_format.format(taskStartDate.getTime())+" and end at "+date_format.format(taskEndDate.getTime())+" and is finished.": taskName+" by "+taskAuthor+" which does "+taskDescription+". It it start at "+date_format.format(taskStartDate.getTime())+" and end at "+date_format.format(taskEndDate.getTime())+" and is not finished.";
+		return isTaskFinished ?
+				"A task named "+taskName+" by "+taskAuthor+" which does "+taskDescription+". It it start at "+date_format.format(taskStartDate.getTime())+" and end at "+date_format.format(taskEndDate.getTime())+" and is finished.":
+				"A task named "+taskName+" by "+taskAuthor+" which does "+taskDescription+". It it start at "+date_format.format(taskStartDate.getTime())+" and end at "+date_format.format(taskEndDate.getTime())+" and is not finished.";
 	}
 	
 
