@@ -7,5 +7,4 @@ public class Manager extends Employee{
 		return "Manager [name=" + name + ", eMail="
 				+ eMail + "]";
 	}
-
 }
