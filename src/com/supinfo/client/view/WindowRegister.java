@@ -23,7 +23,6 @@ public class windowRegister extends JFrame implements ActionListener {
 	private JPasswordField textConfirmed;
 	private JButton btnRegister;
 	private JButton btnCancel;
-
 	/**
 	 * Launch the application.
 	 */
@@ -76,14 +75,6 @@ public class windowRegister extends JFrame implements ActionListener {
 		btnRegister.setBounds(204, 156, 117, 29);
 		contentPane.add(btnRegister);
 		
-		//Button Cancel
-		JButton btnCancel = new JButton("Cancel");
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnCancel.setBounds(327, 156, 117, 29);
-		contentPane.add(btnCancel);
 		
 		//Form Email
 		textEmail = new JTextField();
@@ -108,6 +99,10 @@ public class windowRegister extends JFrame implements ActionListener {
 		roleList.setBounds(45, 96, 137, 27);
 		contentPane.add(roleList);
 		roleList.setSelectedIndex(2);
+		
+		btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(327, 156, 117, 29);
+		contentPane.add(btnCancel);
 		roleList.addActionListener((ActionListener) this);
 		
 

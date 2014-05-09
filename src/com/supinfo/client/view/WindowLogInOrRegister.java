@@ -1,6 +1,5 @@
 package com.supinfo.client.view;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,14 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JLabel;
 import javax.swing.JFormattedTextField;
-import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class windowLogInOrRegister extends JFrame {
 
@@ -57,7 +54,7 @@ public class windowLogInOrRegister extends JFrame {
 		contentPane.add(lblId);
 		
 		//Label Password
-		JLabel lblPassword = new JLabel("Password :");
+		final JLabel lblPassword = new JLabel("Password :");
 		lblPassword.setBounds(66, 67, 89, 15);
 		contentPane.add(lblPassword);
 		
@@ -65,6 +62,10 @@ public class windowLogInOrRegister extends JFrame {
 		JLabel lblOr = new JLabel("or");
 		lblOr.setBounds(198, 119, 42, 15);
 		contentPane.add(lblOr);
+		
+		final JLabel lblMessage = new JLabel("");
+		lblMessage.setBounds(6, 201, 259, 16);
+		contentPane.add(lblMessage);
 		
 		//Form ID
 		JFormattedTextField formID = new JFormattedTextField();
@@ -77,7 +78,17 @@ public class windowLogInOrRegister extends JFrame {
 		contentPane.add(formPassword);
 		
 		//Button LogIn
-		JButton btnLogIn = new JButton("Log in ");
+		final JButton btnLogIn = new JButton("Log in ");
+		/*btnLogIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(btnLogIn.getText() == "toto" && lblPassword.getText() == "mathieu" )
+				{
+					lblMessage.setText("Login failed");
+				}else{
+					lblMessage.setText("Login succesfull");
+				}
+			}
+		}); */
 		btnLogIn.setBounds(66, 121, 117, 25);
 		contentPane.add(btnLogIn);
 		
