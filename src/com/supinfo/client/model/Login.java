@@ -2,20 +2,20 @@ package com.supinfo.client.model;
 
 public abstract class Login {
 	
-	protected String name;
+	protected String username;
 	protected String password;
 	protected String eMail;
 	
 	//Constructor :
 	protected Login(){
-		name = "AcmeUser";
-		password = "Daffy_Duck";
-		eMail= "AcmeUser@acme.com";
+		username = null;
+		password = null;
+		eMail = null;
 	}
 
 	@Override
 	public String toString() {
-		return "Login [name=" + name + ", password=" + password + ", eMail="
+		return "Login [name=" + username + ", password=" + password + ", eMail="
 				+ eMail + "]";
 	}
 	
