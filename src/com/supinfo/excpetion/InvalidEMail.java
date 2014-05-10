@@ -1,27 +1,27 @@
 package com.supinfo.excpetion;
 
-public class StringTooLong extends Exception {
+public class InvalidEMail extends Exception {
 
-	public StringTooLong() {
+	public InvalidEMail() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public StringTooLong(String arg0) {
+	public InvalidEMail(String arg0) {
 		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StringTooLong(Throwable arg0) {
+	public InvalidEMail(Throwable arg0) {
 		super(arg0);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StringTooLong(String arg0, Throwable arg1) {
+	public InvalidEMail(String arg0, Throwable arg1) {
 		super(arg0, arg1);
 		// TODO Auto-generated constructor stub
 	}
 
-	public StringTooLong(String arg0, Throwable arg1, boolean arg2, boolean arg3) {
+	public InvalidEMail(String arg0, Throwable arg1, boolean arg2, boolean arg3) {
 		super(arg0, arg1, arg2, arg3);
 		// TODO Auto-generated constructor stub
 	}

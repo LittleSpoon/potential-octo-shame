@@ -2,15 +2,15 @@ package com.supinfo.client.view.cli;
 
 import java.util.Scanner;
 
-import com.supinfo.controler.LoginCheckSize;
-import com.supinfo.excpetion.StringTooLong;
+import com.supinfo.controler.LoginCheckPassword;
+import com.supinfo.excpetion.PasswordInvalid;
 
 public class Launcher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		LoginCheckSize test =  new LoginCheckSize("testusername",null);
+		LoginCheckPassword test =  new LoginCheckPassword("testusername",null);
 		
 		Scanner cliEntry = new Scanner(System.in);
 		System.out.println("A password of 8 character");		
@@ -18,7 +18,7 @@ public class Launcher {
 		
 		try{
 			test.checkPasswordSize();
-		} catch (StringTooLong e) {
+		} catch (PasswordInvalid e) {
 			System.out.println("Password too long, re-enter it");
 			test.setPassword(cliEntry.nextLine());			
 		} finally {

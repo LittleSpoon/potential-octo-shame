@@ -1,6 +1,8 @@
 package com.supinfo.controler;
 
-public class RegisterCheck extends LoginCheckSize {
+import com.supinfo.excpetion.InvalidEMail;
+
+public class RegisterCheck extends LoginCheckPassword {
 
 	public RegisterCheck() {
 		// TODO Auto-generated constructor stub
@@ -11,5 +13,8 @@ public class RegisterCheck extends LoginCheckSize {
 		this.eMail = loginEMail;
 	}
 	
-	
+	public void eMailCheck() throws InvalidEMail {
+		
+		
+	}
 }
