@@ -1,6 +1,7 @@
 package com.supinfo.controler;
 
 import com.supinfo.client.model.Login;
+import com.supinfo.excpetion.PasswordHaveNotLowercase;
 import com.supinfo.excpetion.PasswordHaveNotNumber;
 import com.supinfo.excpetion.PasswordHaveNotUppercase;
 import com.supinfo.excpetion.PasswordInvalid;
@@ -72,7 +73,34 @@ public class LoginCheckPassword extends Login {
 		}
 	}
 	
-	public void checkPasswordUppercase() throws PasswordHaveNotUppercase {
+	public void checkPasswordUppercase() throws PasswordHaveNotUppercase {		
+		
+		if(checkPasswordLoop(password.toUpperCase())){
+			System.out.println("I'm happy");
+		} else {
+			System.out.println("THROW THE EXCEPTION");
+		}
+	}
+	
+	public void checkPasswordLowercase() throws PasswordHaveNotLowercase {
+		
+	}
+	
+	private boolean checkPasswordLoop(String passwordTestTemp) {
+		int counterUpper = 0;
+		
+		for(int i=0;i <= password.length()-1; i++){
+			if(password.charAt(i) == passwordTestTemp.charAt(i)){
+				counterUpper ++;
+				
+			}
+			
+			if(counterUpper > 0){
+				return true;
+			}
+		}
+		
+		return false;
 		
 	}
 	
