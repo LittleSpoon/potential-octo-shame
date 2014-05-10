@@ -1,4 +1,4 @@
 potential-octo-shame
 ====================
 
-Second java project
+Client du second projet de java,
