@@ -1,4 +1,4 @@
-package com.supinfo.client.view;
+package com.supinfo.client.view.gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
