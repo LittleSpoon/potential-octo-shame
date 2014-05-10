@@ -76,13 +76,19 @@ public class LoginCheckPassword extends Login {
 	public void checkPasswordUppercase() throws PasswordHaveNotUppercase {		
 		
 		if(checkPasswordLoop(password.toUpperCase())){
-			System.out.println("I'm happy");
+			return;
 		} else {
-			System.out.println("THROW THE EXCEPTION");
+			throw new PasswordHaveNotUppercase();
 		}
 	}
 	
 	public void checkPasswordLowercase() throws PasswordHaveNotLowercase {
+		
+		if(checkPasswordLoop(password.toUpperCase())){
+			return;
+		} else {
+			throw new PasswordHaveNotLowercase();
+		}
 		
 	}
 	
