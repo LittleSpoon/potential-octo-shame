@@ -3,7 +3,9 @@ package com.supinfo.client.view;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -43,6 +45,7 @@ public class windowRegister extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public windowRegister() {
+		setTitle("Register");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 210);
 		contentPane = new JPanel();
@@ -93,12 +96,24 @@ public class windowRegister extends JFrame implements ActionListener {
 		textConfirmed.setBounds(93, 62, 351, 28);
 		contentPane.add(textConfirmed);
 		
-		//Combo box Role
-		String[] roleStrings = { "Employee", "Manager"};
+		//Combo box Role		
+		/*String[] roleStrings = { "Employee", "Manager"};
 		JComboBox roleList = new JComboBox(roleStrings);
 		roleList.setBounds(45, 96, 137, 27);
 		contentPane.add(roleList);
+		roleList.setSelectedIndex(2);*/
+		ArrayList<String> maListe = new ArrayList<String>();
+		maListe.add("Permier Element" );
+		maListe.add("Deuxieme Element" );
+		//String[] roleStrings = { "Employee", "Manager"};
+		JComboBox roleList = new JComboBox();
+		roleList.setBounds(45, 96, 137, 27);
+		roleList.addItem(maListe);
+		contentPane.add(roleList);
 		roleList.setSelectedIndex(2);
+
+		
+		
 		
 		btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(327, 156, 117, 29);

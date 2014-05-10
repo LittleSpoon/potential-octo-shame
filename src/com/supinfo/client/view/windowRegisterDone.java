@@ -32,6 +32,7 @@ public class windowRegisterDone extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public windowRegisterDone() {
+		setTitle("Congratilation");
 		setBounds(100, 100, 250, 100);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
