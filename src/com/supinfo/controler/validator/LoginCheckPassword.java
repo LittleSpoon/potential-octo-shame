@@ -1,4 +1,4 @@
-package com.supinfo.controler;
+package com.supinfo.controler.validator;
 
 import com.supinfo.client.model.Login;
 import com.supinfo.exception.PasswordHaveNotLowercase;
