@@ -1,4 +1,4 @@
-package com.supinfo.excpetion;
+package com.supinfo.exception;
 
 public class PasswordHaveNotUppercase extends PasswordInvalid {
 
