@@ -24,7 +24,7 @@ public class LoginCheckPassword extends Login {
 		this.password = loginPW;
 	}
 	
-	public void checkPasswordSize() throws PasswordTooShort {
+	protected void checkPasswordSize() throws PasswordTooShort {
 		
 		if (password.length() < 8){
 			throw new PasswordTooShort();
@@ -32,7 +32,7 @@ public class LoginCheckPassword extends Login {
 			
 	}
 	
-	public void checkPasswordNumber() throws PasswordHaveNotNumber {
+	protected void checkPasswordNumber() throws PasswordHaveNotNumber {
 		char charTest;
 		int numberCounter = 0;
 		
@@ -74,7 +74,7 @@ public class LoginCheckPassword extends Login {
 		}
 	}
 	
-	public void checkPasswordUppercase() throws PasswordHaveNotUppercase {		
+	protected void checkPasswordUppercase() throws PasswordHaveNotUppercase {		
 		
 		if(checkPasswordLoop(password.toUpperCase())){
 			return;
@@ -83,7 +83,7 @@ public class LoginCheckPassword extends Login {
 		}
 	}
 	
-	public void checkPasswordLowercase() throws PasswordHaveNotLowercase {
+	protected void checkPasswordLowercase() throws PasswordHaveNotLowercase {
 		
 		if(checkPasswordLoop(password.toLowerCase())){
 			return;
@@ -93,7 +93,7 @@ public class LoginCheckPassword extends Login {
 		
 	}
 	
-	private boolean checkPasswordLoop(String passwordTestTemp) {
+	protected boolean checkPasswordLoop(String passwordTestTemp) {
 		int charCounter = 0;
 		
 		for(int i=0;i <= password.length()-1; i++){

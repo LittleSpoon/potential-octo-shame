@@ -8,7 +8,7 @@ public class Employee extends Login{
 	
 	@Override
 	public String toString() {
-		return "Employee [name=" + name + ", eMail="
+		return "Employee [name=" + username + ", eMail="
 				+ eMail + "]";
 	}
 

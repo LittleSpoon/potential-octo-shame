@@ -8,7 +8,7 @@ public class Manager extends Employee{
 	
 	@Override
 	public String toString() {
-		return "Manager [name=" + name + ", eMail="
+		return "Manager [name=" + username + ", eMail="
 				+ eMail + "]";
 	}
 }
