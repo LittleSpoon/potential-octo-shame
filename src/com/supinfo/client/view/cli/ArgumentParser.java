@@ -1,7 +1,7 @@
 package com.supinfo.client.view.cli;
 
-import java.util.ArrayList;
-import java.util.List;
+
+import com.supinfo.exception.PasswordInvalid;
 
 public class ArgumentParser {
 
@@ -11,19 +11,28 @@ public class ArgumentParser {
 	UserAuthentication userCheck;
 	
 	//constructor
-	public ArgumentParser(List <String> arguments, List <String> Gui){
-		
-	 name = arguments.get(0);
-	 password = arguments.get(1);
+	public ArgumentParser(String[] arguments){
+	
+		if(arguments[3] =="null"){
+			name = arguments[0];
+			password = arguments[1];
+			 
+			 
+			 userCheck = new UserAuthentication(name, password);
+			 
+		}
 	 
-	 
-	  userCheck = new UserAuthentication(name, password);
 	}
 	
 	//Methods :
 	
 	public void checkRegistration(){
 		
-		userCheck.checkPasswordNumber();
+		try {
+			userCheck.checkPassword();
+		} catch (PasswordInvalid e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
