@@ -1,11 +1,11 @@
 package com.supinfo.controler;
 
 import com.supinfo.client.model.Login;
-import com.supinfo.excpetion.PasswordHaveNotLowercase;
-import com.supinfo.excpetion.PasswordHaveNotNumber;
-import com.supinfo.excpetion.PasswordHaveNotUppercase;
-import com.supinfo.excpetion.PasswordInvalid;
-import com.supinfo.excpetion.PasswordTooShort;
+import com.supinfo.exception.PasswordHaveNotLowercase;
+import com.supinfo.exception.PasswordHaveNotNumber;
+import com.supinfo.exception.PasswordHaveNotUppercase;
+import com.supinfo.exception.PasswordInvalid;
+import com.supinfo.exception.PasswordTooShort;
 
 public class LoginCheckPassword extends Login {
 
@@ -36,28 +36,29 @@ public class LoginCheckPassword extends Login {
 		char charTest;
 		int numberCounter = 0;
 		
-		for(int i=0;i == password.length(); i++){
+		for(int i=0;i != password.length(); i++){
 			charTest = password.charAt(i);
 			switch (charTest) {
-			case 1: numberCounter++;
+			case '1': numberCounter++;
 					break;
-			case 2: numberCounter++;
+			case '2': numberCounter++;
 					break;
-			case 3: numberCounter++;
+			case '3': numberCounter++;
 					break;
-			case 4: numberCounter++;
+			case '4': numberCounter++;
 					break;
-			case 5: numberCounter++;
+			case '5': numberCounter++;
 					break;
-			case 6: numberCounter++;
+			case '6': numberCounter++;
 					break;
-			case 7: numberCounter++;
+			case '7': numberCounter++;
 					break;
-			case 8: numberCounter++;
+			case '8': numberCounter++;
 					break;
-			case 9: numberCounter++;
+			case '9': numberCounter++;
 					break;
-			case 0: numberCounter++;
+			case '0': numberCounter++;
+					break;
 			default: break;			
 			}
 			
@@ -66,7 +67,7 @@ public class LoginCheckPassword extends Login {
 			}
 		}
 		
-		if(numberCounter < 0){
+		if(numberCounter > 0){
 			return;
 		} else {
 			throw new PasswordHaveNotNumber();
@@ -84,7 +85,7 @@ public class LoginCheckPassword extends Login {
 	
 	public void checkPasswordLowercase() throws PasswordHaveNotLowercase {
 		
-		if(checkPasswordLoop(password.toUpperCase())){
+		if(checkPasswordLoop(password.toLowerCase())){
 			return;
 		} else {
 			throw new PasswordHaveNotLowercase();
@@ -93,21 +94,40 @@ public class LoginCheckPassword extends Login {
 	}
 	
 	private boolean checkPasswordLoop(String passwordTestTemp) {
-		int counterUpper = 0;
+		int charCounter = 0;
 		
 		for(int i=0;i <= password.length()-1; i++){
 			if(password.charAt(i) == passwordTestTemp.charAt(i)){
-				counterUpper ++;
-				
+				charCounter ++;
 			}
 			
-			if(counterUpper > 0){
+			if(charCounter > 0){
 				return true;
 			}
 		}
 		
 		return false;
 		
+	}
+	
+	public void checkPassword() throws PasswordInvalid { //This method use chained exception to handle wrong password and throw up the more general PasswordInvalid
+		try{
+			this.checkPasswordSize();
+			this.checkPasswordNumber();
+			this.checkPasswordUppercase();
+			this.checkPasswordLowercase();
+		} catch (PasswordTooShort a) {
+			throw new PasswordInvalid("PasswordTooShort",a);
+		} catch (PasswordHaveNotNumber b) {
+			throw new PasswordInvalid("PasswordHaveNotNumber", b) ;
+		} catch (PasswordHaveNotUppercase c){
+			throw new PasswordInvalid("PasswordHaveNotUppercase", c);
+		} catch (PasswordHaveNotLowercase d){
+			throw new PasswordInvalid("PasswordHaveNotLowercase", d);
+		} finally {
+			//Still searching what to put here.
+			// TODO Fill the Finally block.
+		}
 	}
 	
 	

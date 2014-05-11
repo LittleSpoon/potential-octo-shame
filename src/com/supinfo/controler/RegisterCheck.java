@@ -1,6 +1,7 @@
 package com.supinfo.controler;
 
-import com.supinfo.excpetion.InvalidEMail;
+import com.supinfo.exception.InvalidEMail;
+
 
 public class RegisterCheck extends LoginCheckPassword {
 

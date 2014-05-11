@@ -3,7 +3,7 @@ package com.supinfo.client.view.cli;
 import java.util.Scanner;
 
 import com.supinfo.controler.LoginCheckPassword;
-import com.supinfo.excpetion.PasswordInvalid;
+import com.supinfo.exception.PasswordInvalid;
 
 public class Launcher {
 
@@ -14,8 +14,9 @@ public class Launcher {
 		
 		Scanner cliEntry = new Scanner(System.in);
 		System.out.println("A password of 8 character");		
-		test.setPassword(cliEntry.nextLine());
+		test.setPassword(cliEntry.nextLine());		
 		
+<<<<<<< HEAD
 		try{
 			test.checkPasswordSize();
 			test.checkPasswordLowercase();
@@ -25,9 +26,17 @@ public class Launcher {
 		} catch (PasswordInvalid e) {
 			System.out.println("Password too long, re-enter it");
 			test.setPassword(cliEntry.nextLine());			
+=======
+		try {
+			test.checkPassword();
+		} catch (PasswordInvalid e){
+			System.out.println(e.getCause().toString());
+>>>>>>> 5b6049ae343e1caad9aa74946d9c219980f156a0
 		} finally {
-			System.out.println("Program end");
+			System.out.println("Finally block");
 		}
+		
+		cliEntry.close();
 		
 	}
 
