@@ -15,7 +15,7 @@ public class RegisterCheck extends LoginCheckPassword {
 		this.eMail = loginEMail;
 	}
 	
-	public void eMailCheck() throws InvalidEMail {
+	public void checkEMail() throws InvalidEMail {
 		
 		EmailValidator emailValidator = EmailValidator.getInstance();
 		if(emailValidator.isValid(eMail)){
