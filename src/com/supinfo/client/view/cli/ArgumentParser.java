@@ -13,7 +13,7 @@ public class ArgumentParser {
 	//constructor
 	public ArgumentParser(String[] arguments){
 	
-		if(arguments[3] =="null"){
+		if(arguments[3].equals("test")){
 			name = arguments[0];
 			password = arguments[1];
 			 
