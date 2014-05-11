@@ -18,6 +18,10 @@ public class Launcher {
 		
 		try{
 			test.checkPasswordSize();
+			test.checkPasswordLowercase();
+			test.checkPasswordNumber();
+			test.checkPasswordUppercase();
+			
 		} catch (PasswordInvalid e) {
 			System.out.println("Password too long, re-enter it");
 			test.setPassword(cliEntry.nextLine());			
