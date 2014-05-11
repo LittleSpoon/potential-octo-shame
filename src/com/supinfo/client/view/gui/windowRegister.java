@@ -97,22 +97,11 @@ public class windowRegister extends JFrame implements ActionListener {
 		contentPane.add(textConfirmed);
 		
 		//Combo box Role		
-		/*String[] roleStrings = { "Employee", "Manager"};
+		String[] roleStrings = { "Employee", "Manager"};
 		JComboBox roleList = new JComboBox(roleStrings);
 		roleList.setBounds(45, 96, 137, 27);
 		contentPane.add(roleList);
-		roleList.setSelectedIndex(2);*/
-		ArrayList<String> maListe = new ArrayList<String>();
-		maListe.add("Permier Element" );
-		maListe.add("Deuxieme Element" );
-		//String[] roleStrings = { "Employee", "Manager"};
-		JComboBox roleList = new JComboBox();
-		roleList.setBounds(45, 96, 137, 27);
-		roleList.addItem(maListe);
-		contentPane.add(roleList);
 		roleList.setSelectedIndex(2);
-
-		
 		
 		
 		btnCancel = new JButton("Cancel");

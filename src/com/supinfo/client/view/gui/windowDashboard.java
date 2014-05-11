@@ -94,5 +94,9 @@ public class windowDashboard extends JFrame {
 		});
 		btnEditManager.setBounds(327, 136, 117, 29);
 		contentPane.add(btnEditManager);
+		
+		JButton btnEndProject = new JButton("End Project");
+		btnEndProject.setBounds(6, 136, 117, 29);
+		contentPane.add(btnEndProject);
 	}
 }
