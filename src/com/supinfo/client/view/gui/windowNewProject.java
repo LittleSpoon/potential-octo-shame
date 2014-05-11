@@ -10,11 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
 
 public class windowNewProject extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textNewName;
 
 	/**
 	 * Launch the application.
@@ -38,35 +40,52 @@ public class windowNewProject extends JFrame {
 	public windowNewProject() {
 		setTitle("New Project");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 480, 300);
+		setBounds(100, 100, 480, 118);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// Label new name
 		JLabel lblNewName = new JLabel("Name :");
 		lblNewName.setBounds(6, 6, 52, 16);
 		contentPane.add(lblNewName);
 		
+		//Label begin date 
 		JLabel lblBeginDate = new JLabel("Beginning Date :");
 		lblBeginDate.setBounds(6, 34, 109, 16);
 		contentPane.add(lblBeginDate);
 		
-		textField = new JTextField();
-		textField.setBounds(57, 0, 387, 28);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
+		//label end date
 		JLabel lblEndDate = new JLabel("Ending Date :");
 		lblEndDate.setBounds(247, 34, 90, 16);
 		contentPane.add(lblEndDate);
+
+		//label Rqt begin date
+		JLabel lblRqtBeginDate = new JLabel("");
+		lblRqtBeginDate.setBounds(114, 34, 121, 16);
+		contentPane.add(lblRqtBeginDate);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(116, 34, 119, 28);
-		contentPane.add(dateChooser);
+		//label rqt end date
+		JLabel lblRqtEndDate = new JLabel("");
+		lblRqtEndDate.setBounds(335, 34, 139, 16);
+		contentPane.add(lblRqtEndDate);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(349, 34, 119, 28);
-		contentPane.add(dateChooser_1);
+		//text new name
+		textNewName = new JTextField();
+		textNewName.setBounds(57, 0, 387, 28);
+		contentPane.add(textNewName);
+		textNewName.setColumns(10);
+		
+		//Button Cancel
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(345, 62, 117, 29);
+		contentPane.add(btnCancel);
+		
+		//Button Confirm
+		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.setBounds(220, 62, 117, 29);
+		contentPane.add(btnConfirm);
+		
 	}
 }
