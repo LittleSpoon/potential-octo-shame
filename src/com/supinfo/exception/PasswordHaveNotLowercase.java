@@ -27,4 +27,9 @@ public class PasswordHaveNotLowercase extends PasswordInvalid {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	@Override
+	public String toString(){
+		return "The password need to have at least one lowercase character.";
+	}
 }

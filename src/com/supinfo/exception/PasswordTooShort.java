@@ -27,4 +27,8 @@ public class PasswordTooShort extends PasswordInvalid {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString(){
+		return "The password must be at least eight characters.";
+	}
 }

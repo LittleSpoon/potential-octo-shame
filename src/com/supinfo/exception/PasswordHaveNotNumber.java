@@ -26,5 +26,10 @@ public class PasswordHaveNotNumber extends PasswordInvalid {
 		super(arg0, arg1, arg2, arg3);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String toString() {
+		return "The password need to have at least one number.";
+	}
 
 }
