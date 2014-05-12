@@ -8,94 +8,58 @@ public class ArgumentParser {
 	private String name;
 	private String password;
 	private String email;
+	private TestFirstArgument firstArgument;
 	UserAuthentication userCheck;
 	
-	//constructor
-	public ArgumentParser(String[] arguments){
+	//CONSTRUCTOR :
 	
-		for(int i = 0 ; i < arguments.length; i++){
-			
-			if(i == 0){
-				
-				if(arguments[i].equals("--register")){
-					
-					
-					switch(arguments[i+1]){
-					
-						case "--username" :
-							if(arguments[i+2] != null ){
-								name = arguments[i+2];
-							}
-							break;
-							
-						case "--password" :
-							if(arguments[i+2] != null){
-								password = arguments[i+2];
-							}
-							break;
-						
-						case "--email" :
-							if(arguments[i+2] != null){
-								email = arguments[i+2];
-							}
-							break;
-					}
-					
-					
-					switch(arguments[i+3]){
-						
-						case "--username" :
-							if(arguments[i+4] != null ){
-								name = arguments[i+4];
-							}
-							break;
-						
-						case "--password" :
-							if(arguments[i+4] != null ){
-								password = arguments[i+4];
-							}
-							break;
-					
-						case "--email" :
-							if(arguments[i+4] != null ){
-								email = arguments[i+4];
-							}
-							break;
-					}
-					
-					
-					
-					switch (arguments[i+5]){
-						case "--username" :
-							if(arguments[i+6] != null ){
-								name = arguments[i+4];
-							}
-							break;
-						
-						case "--password" :
-							if(arguments[i+6] != null ){
-								password = arguments[i+4];
-							}
-							break;
-					
-						case "--email" :
-							if(arguments[i+6] != null ){
-								email = arguments[i+4];
-							}
-							break;
-					}
-				}
-				
-			}
-			/*if(arguments[3].equals("test")){
-				name = arguments[0];
-				password = arguments[1];
-				
-				 
-				 userCheck = new UserAuthentication(name, password);
-				 
-			}*/
+	public ArgumentParser(String[] arguments){
+		
+		//if there's no argument :
+		
+		if(arguments.length < 1){
+			System.out.println("invalid command; enter --help to open help page");
+			System.out.println();
 		}
+		
+		
+	
+		
+		firstArgument = new TestFirstArgument(arguments);
+		
+		
+		
+		switch(firstArgument.toString()){
+			
+			case "--register" :
+				ParseRegister registration = new ParseRegister(arguments);
+				String[] temp = new String[arguments.length];
+				temp = registration.value();
+					
+				name = temp[0];
+				password = temp[1];
+				email = temp[2];
+			
+				break;
+			
+			case "--help":
+				//open help page
+				break;
+			
+			case "--username":
+				break;
+			
+			case "password":
+				break;
+			
+			case "project":
+				break;
+			
+			default:
+				break;
+		}
+		
+		userCheck = new UserAuthentication(name,password);
 	}
 	
 	//Methods :
