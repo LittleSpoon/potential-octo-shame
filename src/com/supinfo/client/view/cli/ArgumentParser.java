@@ -15,50 +15,86 @@ public class ArgumentParser {
 	
 		for(int i = 0 ; i < arguments.length; i++){
 			
-			switch(i){
-				case 0 :
-					if(arguments[i].equals("--register") && (!(arguments[i+1] == null || arguments[i+2] == null || arguments[i+3]== null))){
-						name = arguments[i+1];
-						password = arguments[i+2];
-						email = arguments[i+3];
-					}
-					else if (arguments[i].equals("--help") && arguments[i+1]== null && arguments[i+2] == null && arguments[1+3] == null){
-						//open help page
+			if(i == 0){
+				
+				if(arguments[i].equals("--register")){
+					
+					
+					switch(arguments[i+1]){
+					
+						case "--username" :
+							if(arguments[i+2] != null ){
+								name = arguments[i+2];
+							}
+							break;
+							
+						case "--password" :
+							if(arguments[i+2] != null){
+								password = arguments[i+2];
+							}
+							break;
+						
+						case "--email" :
+							if(arguments[i+2] != null){
+								email = arguments[i+2];
+							}
+							break;
 					}
 					
-					else if(arguments[i].equals("gui") && arguments[i+1]== null && arguments[i+2] == null && arguments[1+3] == null){
-						//launch GUI
+					
+					switch(arguments[i+3]){
+						
+						case "--username" :
+							if(arguments[i+4] != null ){
+								name = arguments[i+4];
+							}
+							break;
+						
+						case "--password" :
+							if(arguments[i+4] != null ){
+								password = arguments[i+4];
+							}
+							break;
+					
+						case "--email" :
+							if(arguments[i+4] != null ){
+								email = arguments[i+4];
+							}
+							break;
 					}
 					
-					else if (arguments[i] != null){
-						name = arguments[i];
-					}
 					
-					else{
-						System.out.println(" Incorrect arguments ; enter --help to open help page");
+					
+					switch (arguments[i+5]){
+						case "--username" :
+							if(arguments[i+6] != null ){
+								name = arguments[i+4];
+							}
+							break;
+						
+						case "--password" :
+							if(arguments[i+6] != null ){
+								password = arguments[i+4];
+							}
+							break;
+					
+						case "--email" :
+							if(arguments[i+6] != null ){
+								email = arguments[i+4];
+							}
+							break;
 					}
-					break;
+				}
 				
-				case 1:
-					break;
-				
-				case 2:
-					break;
-				
-				case 3:
-					break;
-				
-				default:
-					break;
 			}
-			if(arguments[3].equals("test")){
+			/*if(arguments[3].equals("test")){
 				name = arguments[0];
 				password = arguments[1];
 				
 				 
 				 userCheck = new UserAuthentication(name, password);
 				 
-			}
+			}*/
 		}
 	}
 	
