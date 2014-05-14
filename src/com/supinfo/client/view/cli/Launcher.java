@@ -9,7 +9,6 @@ public class Launcher {
 				
 		testParser.checkRegistration();
 		
-		
 		System.out.println("end of program");
 	}
 

@@ -5,9 +5,10 @@ import com.supinfo.exception.PasswordInvalid;
 
 public class ArgumentParser {
 
-	private String name;
+	private String userName;
 	private String password;
 	private String email;
+	private String project;
 	private TestFirstArgument firstArgument;
 	UserAuthentication userCheck;
 	
@@ -24,19 +25,20 @@ public class ArgumentParser {
 		
 		
 	
-		
+		//Testing of the first argument :
 		firstArgument = new TestFirstArgument(arguments);
 		
 		
 		
 		switch(firstArgument.toString()){
 			
+		//if the first argument is --register :
 			case "--register" :
 				ParseRegister registration = new ParseRegister(arguments);
 				String[] temp = new String[arguments.length];
 				temp = registration.value();
 					
-				name = temp[0];
+				userName = temp[0];
 				password = temp[1];
 				email = temp[2];
 			
@@ -46,20 +48,20 @@ public class ArgumentParser {
 				//open help page
 				break;
 			
-			case "--username":
-				break;
-			
-			case "password":
-				break;
-			
-			case "project":
-				break;
-			
 			default:
+				ParserAuthentication authentication = new ParserAuthentication(arguments);
+				String[] tempAuthentication = new String[arguments.length];
+				
+				tempAuthentication = authentication.authenticationValue();
+				userName = tempAuthentication[0];
+				password = tempAuthentication[1];
+				project = tempAuthentication[2];
 				break;
 		}
 		
-		userCheck = new UserAuthentication(name,password);
+		
+		//
+		userCheck = new UserAuthentication(userName,password);
 	}
 	
 	//Methods :
@@ -72,5 +74,6 @@ public class ArgumentParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 }
