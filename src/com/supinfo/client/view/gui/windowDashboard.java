@@ -58,18 +58,22 @@ public class windowDashboard extends JFrame {
 		lblNbEmployee.setBounds(6, 62, 148, 16);
 		contentPane.add(lblNbEmployee);
 		
+		//lblDateBegin label date begin
 		JLabel lblDateBegin = new JLabel("Date Begin :");
 		lblDateBegin.setBounds(6, 90, 80, 16);
 		contentPane.add(lblDateBegin);
 		
+		//lblDateEnd label date end
 		JLabel lblDateEnd = new JLabel("Date End :");
 		lblDateEnd.setBounds(220, 90, 70, 16);
 		contentPane.add(lblDateEnd);
 		
+		//lblRqtNameProjet label name projet
 		JLabel lblRqtNameProjet = new JLabel("");
 		lblRqtNameProjet.setBounds(99, 6, 345, 16);
 		contentPane.add(lblRqtNameProjet);
 		
+		//lblRqtProjectCompletion lbl project 
 		JLabel lblRqtProjectCompletion = new JLabel("");
 		lblRqtProjectCompletion.setBounds(149, 34, 295, 16);
 		contentPane.add(lblRqtProjectCompletion);

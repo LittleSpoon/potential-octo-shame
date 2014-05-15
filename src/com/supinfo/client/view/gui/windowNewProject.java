@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
 
 public class windowNewProject extends JFrame {

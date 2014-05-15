@@ -111,4 +111,9 @@ public class windowRegister extends JFrame implements ActionListener {
 		
 
 	}
+
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -94,6 +94,12 @@ public class windowLogInOrRegister extends JFrame {
 		
 		//Button Register
 		JButton btnRegister = new JButton("Register");
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				windowRegister windowR = new windowRegister();
+				windowR.setVisible(true);
+			}
+		});
 		btnRegister.setBounds(66, 168, 117, 25);
 		contentPane.add(btnRegister);
 	}
