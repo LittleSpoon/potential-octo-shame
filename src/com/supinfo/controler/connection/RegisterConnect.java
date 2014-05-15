@@ -1,5 +1,6 @@
 package com.supinfo.controler.connection;
 
+import com.supinfo.client.model.DefaultServer;
 import com.supinfo.controler.validator.RegisterCheck;
 
 public class RegisterConnect extends RegisterCheck {
@@ -13,4 +14,9 @@ public class RegisterConnect extends RegisterCheck {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void sendRegister(){
+		ConnectToServer sendRegisterToServer = new ConnectToServer(DefaultServer.defaultServer,DefaultServer.defaultPort,"REGISTER USERNAME "+username+" PASSWORD "+password+ " EMAIL "+ eMail);
+		sendRegisterToServer.openConnection();
+	}
+	
 }

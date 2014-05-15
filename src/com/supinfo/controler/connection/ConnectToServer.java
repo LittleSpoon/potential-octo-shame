@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import com.supinfo.client.model.DefaultServer;
+
 public class ConnectToServer {
 	
 	private int portNumber;
@@ -14,35 +16,28 @@ public class ConnectToServer {
 	private String fromServer;
 	private String fromClient;
 	
-	public void ConnectToServer() {
-		//TODO Change NOVA to freljord
-		this.ConnectToServer("NOVA", 4165);		
+	public ConnectToServer() {
+		this.portNumber = DefaultServer.defaultPort;
+		this.serverHostname = DefaultServer.defaultServer;
+		this.fromClient = "TEST";	
 	}
 	
-	public void ConnectToServer(String hostname,int port){
+	public ConnectToServer(String hostname,int port, String stringToSend){
 		this.portNumber = port;
 		this.serverHostname = hostname;
+		this.fromClient = stringToSend;
 	}
 	
-	private void openConnection(String toSend) {
+	public void openConnection() {
 		try(
-			Socket clientSocket =new Socket(serverHostname, portNumber);
+			Socket clientSocket = new Socket(serverHostname, portNumber);
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 			BufferedReader in =new BufferedReader(
 					new InputStreamReader(clientSocket.getInputStream()));
 		) {
-				while ((fromServer = in.readLine()) != null) {
-				
-	             if (toSend != null) {
-	                out.println(toSend);
-	             }
-				
-                System.out.println("Server: " + fromServer);
-                if (fromServer.equals("Bye."))
-                    break;
-               
-            }
-		
+			
+				sendString(out,in);
+			
 		} catch (UnknownHostException e) {
 			System.err.println("Don't know about host " + serverHostname);
 			System.exit(1);
@@ -55,5 +50,21 @@ public class ConnectToServer {
 		}
 		
 	}
+	
+	private void sendString(PrintWriter out,BufferedReader in) throws IOException{
+		while ((fromServer = in.readLine()) != null) {
+			
+            if (fromClient != null) {
+               out.println(fromClient);
+            }
+			
+           System.out.println("Server: " + fromServer);
+           if (fromServer.equals("Bye."))
+               break;
+          
+       }
+		
+	}
+	
 	
 }
