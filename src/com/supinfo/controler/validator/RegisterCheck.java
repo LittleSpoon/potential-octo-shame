@@ -1,6 +1,6 @@
 package com.supinfo.controler.validator;
 
-import com.supinfo.controler.validator.org.apache.commons.validator.routines.EmailValidator;
+//import com.supinfo.controler.validator.org.apache.commons.validator.routines.EmailValidator;
 import com.supinfo.exception.InvalidEMail;
 
 

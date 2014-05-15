@@ -2,7 +2,7 @@ package com.supinfo.client.view.cli;
 
 
 import com.supinfo.exception.PasswordInvalid;
-
+import com.supinfo.controler.connection.LoginConnect;
 public class ArgumentParser {
 
 	private String userName;
@@ -44,8 +44,13 @@ public class ArgumentParser {
 			
 				break;
 			
+			//if the first argument is --help :
 			case "--help":
 				//open help page
+				break;
+			
+			case "--Gui" :
+				//Launch GUI
 				break;
 			
 			default:
@@ -62,9 +67,10 @@ public class ArgumentParser {
 		
 		//
 		userCheck = new UserAuthentication(userName,password);
+		LoginConnect connection = new LoginConnect(userName,password);
 	}
 	
-	//Methods :
+	//METHODS :
 	
 	public void checkRegistration(){
 		
@@ -74,6 +80,5 @@ public class ArgumentParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }
