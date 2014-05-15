@@ -19,35 +19,39 @@ public class ParseRegister {
 			
 			System.out.println("not enough arguments");
 		}
-		
-		for (int i = 0; i < arguments.length - 1;i++){
+		else{
+			for (int i = 0; i < arguments.length - 1;i++){
 				
-				switch (arguments[i+1]){
+					switch (arguments[i+1]){
 				
-					case "--username":
-						if(arguments[i+2]!= null && name == null){
-							name = arguments[i+2];
-						}
-						break;
+						case "--username":
+							if(arguments[i+2]!= null && name == null){
+								name = arguments[i+2];
+							}
+							break;
 					
-					case "--password":
-						if(arguments[i+2]!= null && password == null){
-							password = arguments[i+2];
-						}
-						break;
+						case "--password":
+							if(arguments[i+2]!= null && password == null){
+								password = arguments[i+2];
+							}
+							break;
 					
-					case "--email":
-						if(arguments[i+2]!= null && email == null){
-							email = arguments[i+2];
-						}
-						break;
+						case "--email":
+							if(arguments[i+2]!= null && email == null){
+								email = arguments[i+2];
+							}
+							break;
 					
-					default :
-						break;
-				}
+						default :
+							break;
+					}
 			
+			}
 		}
 	}
+	
+	
+	// METHODS :
 	
 	public String[] value(){
 		

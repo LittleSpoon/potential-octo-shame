@@ -35,13 +35,16 @@ public class ArgumentParser {
 		//if the first argument is --register :
 			case "--register" :
 				ParseRegister registration = new ParseRegister(arguments);
+				
 				String[] temp = new String[arguments.length];
 				temp = registration.value();
 					
-				userName = temp[0];
+				userName = temp[0];	//we store the value of the arguments in the appropriate fields
 				password = temp[1];
 				email = temp[2];
-			
+				
+				userCheck = new UserAuthentication(userName,password);
+				checkRegistration();		//then we check if the registration is correct
 				break;
 			
 			//if the first argument is --help :
@@ -53,11 +56,15 @@ public class ArgumentParser {
 				//Launch GUI
 				break;
 			
+			
+			//By default the arguments will be used for the authentication :
+				
 			default:
 				ParserAuthentication authentication = new ParserAuthentication(arguments);
-				String[] tempAuthentication = new String[arguments.length];
 				
+				String[] tempAuthentication = new String[arguments.length];		
 				tempAuthentication = authentication.authenticationValue();
+				
 				userName = tempAuthentication[0];
 				password = tempAuthentication[1];
 				project = tempAuthentication[2];
@@ -65,14 +72,16 @@ public class ArgumentParser {
 		}
 		
 		
-		//
 		userCheck = new UserAuthentication(userName,password);
+		
+		//We launch the connection to the server using the username and the password : 
 		LoginConnect connection = new LoginConnect(userName,password);
+		connection.sendLogin();
 	}
 	
 	//METHODS :
 	
-	public void checkRegistration(){
+	public void checkRegistration(){	//This method allows to check if a password entered during registration is correct
 		
 		try {
 			userCheck.checkPassword();
